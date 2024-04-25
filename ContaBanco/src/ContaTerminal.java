@@ -1,15 +1,31 @@
+import java.util.Scanner;
+
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
-        //Atributo	Tipo	Exemplo
-        //Numero	Inteiro	1021
-        //Agencia	Texto	067-8
-        //Nome Cliente	Texto	MARIO ANDRADE
-        //Saldo	Decimal	237.48
-        //TODO: Revise sobre terminal, main args e a classe Scanner
-        //TODO: Permitir Inserção dos dados do usurário no terminal(numero, agencia, nomeCliente, Saldo)
 
-        //TODO: Exibir os dados no seguinte formato:
-        //"Olá [Nome Cliente], obrigado por criar uma conta em nosso banco, sua agência é [Agencia], 
-        //conta [Numero] e seu saldo [Saldo] já está disponível para saque".
+        Scanner scanner = new Scanner(System.in);
+
+        int numero;
+        String agencia;
+        String nomeCLiente;
+        double saldo;
+
+        System.out.println("Digite o numero da conta:");
+        numero = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("Digite o numero da agência:");
+        agencia = scanner.nextLine();
+
+        System.out.println("Digite o nome do cliente:");
+        nomeCLiente = scanner.nextLine();
+
+        System.out.println("Digite o saldo da conta:");
+        saldo = Double.parseDouble(scanner.nextLine());
+        
+        scanner.close();
+
+        System.out.println("Olá " + nomeCLiente +", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + 
+        ",conta " + numero + " e seu saldo de " + saldo + " já está disponível para saque");
+
     }
 }
